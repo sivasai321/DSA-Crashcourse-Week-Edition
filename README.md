@@ -5,7 +5,7 @@ We start with **Topic 1: Big-O Notation** — the foundation of everything.
 
 ---
 
-# Topic 1: Big-O (Explained Like You’re 10, But Interview-Ready)
+# Topic 1: Big-O 
 
 ## What is Big-O?
 
