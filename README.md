@@ -193,5 +193,192 @@ Most beginner mistakes:
 
 
 ---
+Good. Now we move to:
+
+# Topic 2: Arrays (Python Lists) 
+This is one of the most used data structures in interviews.
+
+---
+
+## What is an Array?
+
+An array is a collection of items stored in a single variable.
+
+In Python, we use **lists**.
+
+```python
+arr = [10, 20, 30, 40]
+```
+
+Each item has an **index** (position).
+
+```
+Index:  0   1   2   3
+Value: 10  20  30  40
+```
+
+---
+
+## How Access Works (O(1))
+
+```python
+arr[0]   # 10
+arr[2]   # 30
+```
+
+This is **O(1)** — instant access.
+
+No searching. No scanning.
+
+---
+
+## Looping Through an Array (O(n))
+
+```python
+for x in arr:
+    print(x)
+```
+
+If array size = n, this runs n times.
+
+That is **O(n)**.
+
+---
+
+## Modifying an Array
+
+### Append (add at end)
+
+```python
+arr.append(50)
+```
+
+Usually O(1)
+
+---
+
+### Pop (remove last)
+
+```python
+arr.pop()
+```
+
+O(1)
+
+---
+
+### Insert (slow)
+
+```python
+arr.insert(0, 99)
+```
+
+This shifts all elements → O(n)
+
+---
+
+## Searching in an Array
+
+### Check if element exists
+
+```python
+if 30 in arr:
+    print("Found")
+```
+
+This is **O(n)** — Python checks one by one.
+
+---
+
+## Why Arrays Can Be Slow
+
+If you need to:
+
+* Search
+* Check duplicates
+* Count frequencies
+
+Arrays alone are bad.
+
+That’s where **hashmaps** come in.
+
+---
+
+## Common Array Interview Patterns
+
+### 1. Traversing
+
+```python
+for i in range(len(arr)):
+    print(arr[i])
+```
+
+---
+
+### 2. Two Pointer Pattern (later)
+
+Used in sorted arrays.
+
+---
+
+### 3. Sliding Window (later)
+
+Used in subarray problems.
+
+---
+
+## Most Beginner Mistake
+
+People write nested loops without thinking.
+
+Example:
+
+```python
+for i in range(len(arr)):
+    for j in range(len(arr)):
+        if arr[i] == arr[j]:
+            print("Duplicate")
+```
+
+This is **O(n²)** 💀
+
+We will avoid this.
+
+---
+
+## Important: Index vs Value
+
+### Index-based loop
+
+```python
+for i in range(len(arr)):
+    print(i, arr[i])
+```
+
+---
+
+### Value-based loop
+
+```python
+for x in arr:
+    print(x)
+```
+
+---
+
+## When Arrays Are Not Enough
+
+If problem says:
+
+* “Check if exists”
+* “Count frequency”
+* “Find duplicates”
+* “Find pairs”
+
+→ You probably need a **hashmap**.
+
+---
+
+
 
 
