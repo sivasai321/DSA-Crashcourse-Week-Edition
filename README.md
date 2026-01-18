@@ -378,6 +378,291 @@ If problem says:
 → You probably need a **hashmap**.
 
 ---
+Alright. Now we hit the **MOST IMPORTANT TOPIC of Day 1**:
+
+# Topic 3: HashMaps (dict & set)
+
+If you master this, **50% of beginner interview problems become easy**.
+
+---
+
+## What is a HashMap?
+
+A HashMap stores data in **key → value** form.
+
+In Python, it’s called a **dictionary (dict)**.
+
+```python
+person = {
+    "name": "Sai",
+    "age": 21
+}
+```
+
+Here:
+
+* "name" is the key
+* "Sai" is the value
+
+---
+
+## Why HashMaps Exist
+
+Imagine this:
+
+You have a list:
+
+```python
+arr = [10, 20, 30, 40]
+```
+
+To check if 30 exists:
+
+```python
+if 30 in arr:   # O(n)
+```
+
+Python checks one by one.
+
+---
+
+Now with a dictionary:
+
+```python
+d = {10: True, 20: True, 30: True}
+```
+
+Check:
+
+```python
+if 30 in d:   # O(1)
+```
+
+🔥 Instant.
+
+---
+
+## HashMap = Super Fast Memory
+
+HashMaps trade **memory for speed**.
+
+They store data in a way that allows **instant lookup**.
+
+---
+
+## Basic Operations
+
+### Create
+
+```python
+d = {}
+```
+
+---
+
+### Insert
+
+```python
+d["apple"] = 3
+```
+
+---
+
+### Access
+
+```python
+print(d["apple"])
+```
+
+---
+
+### Check existence
+
+```python
+if "apple" in d:
+    print("Yes")
+```
+
+---
+
+### Delete
+
+```python
+del d["apple"]
+```
+
+---
+
+## What is a Set?
+
+A set is like a dictionary but with only keys.
+
+No values.
+
+```python
+s = set()
+```
+
+---
+
+### Add
+
+```python
+s.add(10)
+```
+
+---
+
+### Check
+
+```python
+if 10 in s:
+    print("Found")
+```
+
+---
+
+### Why Sets?
+
+To store **unique values only**.
+
+```python
+s = set()
+s.add(5)
+s.add(5)
+s.add(5)
+
+print(s)  # {5}
+```
+
+---
+
+## HashMaps in Interviews = Memory
+
+HashMaps let you **remember past elements**.
+
+This is HUGE.
+
+---
+
+## Example: Duplicate Detection
+
+Bad way:
+
+```python
+for i in range(len(arr)):
+    for j in range(i+1, len(arr)):
+        if arr[i] == arr[j]:
+            return True
+```
+
+⛔ O(n²)
+
+---
+
+Good way:
+
+```python
+seen = set()
+
+for x in arr:
+    if x in seen:
+        return True
+    seen.add(x)
+```
+
+✅ O(n)
+
+---
+
+## Frequency Counting (Very Important)
+
+Used in:
+
+* Anagram problems
+* Character count
+* Majority element
+* Mode
+
+---
+
+### Example: Count letters
+
+```python
+s = "aabbbc"
+```
+
+---
+
+### Step-by-step
+
+```python
+freq = {}
+
+for ch in s:
+    if ch in freq:
+        freq[ch] += 1
+    else:
+        freq[ch] = 1
+```
+
+Result:
+
+```python
+{'a': 2, 'b': 3, 'c': 1}
+```
+
+---
+
+### Python Shortcut
+
+```python
+freq[ch] = freq.get(ch, 0) + 1
+```
+
+---
+
+## Interview Insight
+
+If the problem says:
+
+* "Count"
+* "Frequency"
+* "How many times"
+* "Duplicate"
+* "Exists"
+
+Think: **HASHMAP / SET**
+
+---
+
+## Common Mistake
+
+People do:
+
+```python
+if x in arr:
+```
+
+Instead of:
+
+```python
+if x in seen_set:
+```
+
+---
+
+## Time Complexity Summary
+
+| Operation | List | Dict/Set |
+| --------- | ---- | -------- |
+| Lookup    | O(n) | O(1)     |
+| Insert    | O(1) | O(1)     |
+| Delete    | O(n) | O(1)     |
+
+---
+
+
 
 
 
