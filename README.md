@@ -660,7 +660,189 @@ if x in seen_set:
 | Insert    | O(1) | O(1)     |
 | Delete    | O(n) | O(1)     |
 
+
 ---
+
+## What is Brute Force?
+
+Brute force =
+👉 Try **every possible combination**
+👉 No intelligence
+👉 Just raw looping
+
+It’s like checking every door until you find the right one.
+
+---
+
+### Example
+
+Problem:
+"Find if any two numbers add up to 10."
+
+Array: `[1, 3, 4, 6, 8]`
+
+---
+
+### Brute Force Way
+
+```python
+for i in range(len(arr)):
+    for j in range(i+1, len(arr)):
+        if arr[i] + arr[j] == 10:
+            return True
+```
+
+This checks:
+
+* 1 + 3
+* 1 + 4
+* 1 + 6
+* 1 + 8
+* 3 + 4
+* 3 + 6
+* 3 + 8
+* ...
+
+This is **O(n²)** 💀
+
+---
+
+## Why Brute Force is Bad
+
+Let’s say:
+n = 10 → 100 operations
+n = 100 → 10,000 operations
+n = 1,000 → 1,000,000 operations
+n = 100,000 → 💀💀💀
+
+Interviews will reject this.
+
+---
+
+## What is Optimized Thinking?
+
+Optimized thinking =
+👉 Use **logic + data structures**
+👉 Reduce unnecessary work
+👉 Use memory (hashmaps, sets)
+
+Instead of trying everything, you **think smart**.
+
+---
+
+## Example: Duplicate Check
+
+### Brute Force
+
+```python
+for i in range(len(nums)):
+    for j in range(i+1, len(nums)):
+        if nums[i] == nums[j]:
+            return True
+```
+
+O(n²)
+
+---
+
+### Optimized
+
+```python
+seen = set()
+
+for x in nums:
+    if x in seen:
+        return True
+    seen.add(x)
+```
+
+O(n)
+
+---
+
+## Key Difference
+
+| Brute Force  | Optimized   |
+| ------------ | ----------- |
+| Try all      | Think smart |
+| Nested loops | Single loop |
+| No memory    | Uses memory |
+| Slow         | Fast        |
+| O(n²)        | O(n)        |
+
+---
+
+## How to Think Optimized (Important)
+
+When you see a problem, ask:
+
+### 1️⃣ Do I really need nested loops?
+
+If yes → probably wrong.
+
+---
+
+### 2️⃣ Can I remember past values?
+
+Use:
+
+* set
+* dict
+
+---
+
+### 3️⃣ Can I trade memory for speed?
+
+Almost always yes.
+
+---
+
+## Interview Mental Shift
+
+Beginner thinking:
+
+> “Let me check everything.”
+
+Interview-ready thinking:
+
+> “How can I avoid checking everything?”
+
+---
+
+## Pattern Recognition
+
+If problem involves:
+
+| Problem Type | Use  |
+| ------------ | ---- |
+| Duplicate    | Set  |
+| Pair sum     | Dict |
+| Count        | Dict |
+| Existence    | Set  |
+| Anagram      | Dict |
+| Frequency    | Dict |
+
+---
+
+## Example: Checking if two numbers add to target
+
+Instead of:
+
+"Let me check every pair"
+
+Think:
+
+"If current number is x, I need (target - x).
+Can I check instantly if I’ve seen it before?"
+
+Boom → Hashmap.
+
+---
+
+
+
+
+
 
 
 
